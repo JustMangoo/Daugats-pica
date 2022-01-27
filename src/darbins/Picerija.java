@@ -3,17 +3,63 @@ package darbins;
 import javax.swing.JOptionPane;
 
 public class Picerija {
+	public static void pasutit(pica[] picuMas,int Nr) {
+		int picIzmers;
+		boolean picMerce;
+		boolean picDesa;
+		boolean picTomati;
+		boolean picOlives;
+		boolean picVista;
+		boolean picBekons;
+		boolean picAnanas;
+		boolean picSenes;
+		
+		int picNr = Nr;
+		do {
+			picIzmers = Integer.parseInt(JOptionPane.showInputDialog("Picas izmers\n20 | 30 | 50"));
+			}while(picIzmers != 20 || picIzmers != 30 || picIzmers != 50);
+		do {
+			picMerce = Boolean.parseBoolean(JOptionPane.showInputDialog("Vai pievienot pamatnei merci?\ntrue | false"));
+			}while(picMerce != true || picMerce != false);
+		do {
+			picDesa = Boolean.parseBoolean(JOptionPane.showInputDialog("Vai pievienot desu?\ntrue | false"));
+			}while(picDesa != true || picDesa != false);
+		do {
+			picTomati = Boolean.parseBoolean(JOptionPane.showInputDialog("Vai pievienot tomatus?\ntrue | false"));
+			}while(picTomati != true || picTomati != false);
+		do {
+			picOlives = Boolean.parseBoolean(JOptionPane.showInputDialog("Vai pievienot olives?\\ntrue | false"));
+			}while(picOlives != true || picOlives != false);
+		do {
+			picVista = Boolean.parseBoolean(JOptionPane.showInputDialog("Vai pievienot vistu?\\ntrue | false"));
+			}while(picVista != true || picVista != false);
+		do {
+			picBekons = Boolean.parseBoolean(JOptionPane.showInputDialog("Vai pievienot bekonu?\\ntrue | false"));
+			}while(picBekons != true || picBekons != false);
+		do {
+			picAnanas = Boolean.parseBoolean(JOptionPane.showInputDialog("Vai pievienot ananasus?\\ntrue | false"));
+			}while(picAnanas != true || picAnanas != false);
+		do {
+			picSenes = Boolean.parseBoolean(JOptionPane.showInputDialog("Vai pievienot senes?\\ntrue | false"));
+			}while(picSenes != true || picSenes != false);
+		
+		picuMas = new pica[picNr];
+	}
 
 	public static void main(String[] args) {
+		int Nr = 1;
 		String izvele;
-		
+		pica[] picuMas = null;
+		klients[] klientuMas = null;
+		pasutijums[] pasutMas = null;
 		do {
 			izvele = JOptionPane.showInputDialog("1-izveidot pasutijumu |2-skatit klientus |3-skatit picas |stop-apturet");
 			izvele = izvele.toLowerCase();
 			
 			switch(izvele){
 				case "1":
-					
+					pasutit(picuMas, Nr);
+					Nr++;
 					break;
 				
 				case "2":
