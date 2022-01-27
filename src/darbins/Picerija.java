@@ -3,7 +3,8 @@ package darbins;
 import javax.swing.JOptionPane;
 
 public class Picerija {
-	public static void pasutit(pica[] picuMas,int Nr) {
+	public static pica[] pasutit(pica[] picuMas) {
+		int Nr = 1;
 		int picIzmers;
 		boolean picMerce;
 		boolean picDesa;
@@ -14,7 +15,7 @@ public class Picerija {
 		boolean picAnanas;
 		boolean picSenes;
 		
-		int picNr = Nr;
+		int picNr = Nr++;
 		do {
 			picIzmers = Integer.parseInt(JOptionPane.showInputDialog("Picas izmers\n20 | 30 | 50"));
 			}while(picIzmers != 20 || picIzmers != 30 || picIzmers != 50);
@@ -43,23 +44,24 @@ public class Picerija {
 			picSenes = Boolean.parseBoolean(JOptionPane.showInputDialog("Vai pievienot senes?\\ntrue | false"));
 			}while(picSenes != true || picSenes != false);
 		
-		picuMas = new pica[picNr];
+		picuMas = new pica(picNr, picIzmers, picMerce, picDesa, picTomati, picOlives, picVista, picBekons, picAnanas, picSenes);
+		
 	}
 
 	public static void main(String[] args) {
-		int Nr = 1;
 		String izvele;
 		pica[] picuMas = null;
-		klients[] klientuMas = null;
 		pasutijums[] pasutMas = null;
+		klients Klients = null;
 		do {
 			izvele = JOptionPane.showInputDialog("1-izveidot pasutijumu |2-skatit klientus |3-skatit picas |stop-apturet");
 			izvele = izvele.toLowerCase();
 			
 			switch(izvele){
 				case "1":
-					pasutit(picuMas, Nr);
-					Nr++;
+					int pasutijumuSkaits = Integer.parseInt(JOptionPane.showInputDialog("Cik cik picas cept?"));
+					picuMas = new pica[pasutijumuSkaits];
+					picuMas = pasutit(picuMas);
 					break;
 				
 				case "2":
