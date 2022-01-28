@@ -1,7 +1,6 @@
 package darbins;
 
 public class pica {
-	public int Nr;
 	public int izmers;
 	public boolean merce;
 	public boolean desa;
@@ -12,8 +11,7 @@ public class pica {
 	public boolean ananas;
 	public boolean senes;
 	
-	public pica(int Nr, int izmers, boolean merce, boolean desa, boolean tomati, boolean olives, boolean vista, boolean bekons, boolean ananas, boolean senes) {
-		this.Nr = Nr;
+	public pica(int izmers, boolean merce, boolean desa, boolean tomati, boolean olives, boolean vista, boolean bekons, boolean ananas, boolean senes) {
 		this.izmers = izmers;
 		this.merce = merce;
 		this.desa = desa;
