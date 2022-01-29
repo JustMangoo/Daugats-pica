@@ -14,9 +14,15 @@ public class pasutijums {
 	}
 	public double noteiktCenu() {
 		
+		if(!dzeriens.equals("nav")) {
+			cena+=1.25;
+		}
+		if(!uzkodas.equals("nav")) {
+			cena+=1.25;
+		}
 		return cena;
 	}
 	public void izvadit(){
-		JOptionPane.showMessageDialog(null, "Dzeriens: "+dzeriens+"\nUzkodas:"+uzkodas+"\n\nCena:"+cena);
+		JOptionPane.showMessageDialog(null, "Dzeriens: "+dzeriens+"\nUzkodas:"+uzkodas+"\n\nCena: "+cena);
 	}
 }

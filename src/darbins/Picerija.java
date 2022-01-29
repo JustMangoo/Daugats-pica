@@ -60,6 +60,8 @@ public class Picerija {
 			}while(!uzkodas.equals("grauzdini") && !uzkodas.equals("nacho") && !uzkodas.equals("fri") && !uzkodas.equals("nav"));
     	double cena = picCena;
     	Pasut = new pasutijums(dzeriens, uzkodas, cena);
+    	cena = Pasut.noteiktCenu();
+    	Pasut = new pasutijums(dzeriens, uzkodas, cena);
     	return Pasut;
     }
 	
@@ -93,6 +95,7 @@ public class Picerija {
 					for(int i=0; i<picuMas.length; i++){
 					picCena = picuMas[i].noteiktCenu();
 					}
+					
 					pasutijums = izveidotPasutijumu(pasutijums, picCena);
 					break;
 				
