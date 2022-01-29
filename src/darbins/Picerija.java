@@ -47,20 +47,37 @@ public class Picerija {
 		}
 		return picuMas;
 	}
+    public static pasutijums izveidotPasutijumu(pasutijums Pasut, double picCena) {
+    	String dzeriens;
+    	String uzkodas;
+    	do {
+    		dzeriens = JOptionPane.showInputDialog("Dzerieni\nKola | Fanta | Sprite | Nav");
+    		dzeriens = dzeriens.toLowerCase();
+			}while(!dzeriens.equals("kola") && !dzeriens.equals("fanta") && !dzeriens.equals("sprite") && !dzeriens.equals("nav"));
+    	do {
+    		uzkodas = JOptionPane.showInputDialog("Uzkodas\nGrauzdini | Nacho | Fri | Nav");
+    		uzkodas = uzkodas.toLowerCase();
+			}while(!uzkodas.equals("grauzdini") && !uzkodas.equals("nacho") && !uzkodas.equals("fri") && !uzkodas.equals("nav"));
+    	double cena = picCena;
+    	Pasut = new pasutijums(dzeriens, uzkodas, cena);
+    	return Pasut;
+    }
 	
 	public static klients iezveidotKlientu(klients Klients) {
 		String klNumurs = JOptionPane.showInputDialog("Jusu nummurs");
 		String klAdrese = JOptionPane.showInputDialog("Jusu adrese");
 		String klVards  = JOptionPane.showInputDialog("Jusu vards");
 		
+		Klients = new klients(klNumurs, klAdrese, klVards);
 		return Klients;
 	}
 
 	public static void main(String[] args) {
 		try {
+		double picCena=0;
 		String izvele;
 		pica[] picuMas = null;
-		pasutijums[] pasutMas = null;
+		pasutijums pasutijums = null;
 		klients Klients = null;
 		do {
 			izvele = JOptionPane.showInputDialog("1-veikt pasutijumu |2-skatit pasutijumu |3-skatit picas |4-skatit klienta info|stop-apturet");
@@ -73,22 +90,31 @@ public class Picerija {
 					int picuSkaits = Integer.parseInt(JOptionPane.showInputDialog("Cik picas cept?"));
 					picuMas = new pica[picuSkaits];
 					picuMas = pasutit(picuMas);
+					for(int i=0; i<picuMas.length; i++){
+					picCena = picuMas[i].noteiktCenu();
+					}
+					pasutijums = izveidotPasutijumu(pasutijums, picCena);
 					break;
 				
 				case "2":
+					pasutijums.izvadit();
 					break;
 					
 				case "3":
+					for(int i=0; i<picuMas.length; i++){
+					picuMas[i].izvadit();
+					}
 					break;
 					
 				case "4":
+					Klients.izvadit();
 					break;
 				case "stop":
 					JOptionPane.showMessageDialog(null, "Programma aptureta!", "Bridinajums!", JOptionPane.WARNING_MESSAGE );
 					break;
 				
 				default:
-					JOptionPane.showMessageDialog(null, "Darbiba nepastav!", "Kluda!", JOptionPane.ERROR_MESSAGE );
+					JOptionPane.showMessageDialog(null, "Kluda (switch)!", "Kluda!", JOptionPane.ERROR_MESSAGE );
 					
 			}
 		}while(!izvele.equals("stop"));

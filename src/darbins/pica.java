@@ -1,5 +1,7 @@
 package darbins;
 
+import javax.swing.JOptionPane;
+
 public class pica {
 	public int izmers;
 	public boolean merce;
@@ -21,5 +23,47 @@ public class pica {
 		this.bekons = bekons;
 		this.ananas = ananas;
 		this.senes = senes;
+	}
+	
+	public double noteiktCenu() {
+		double cena=0;
+		if(izmers == 20) {
+			cena+=2;
+		}else if(izmers == 30) {
+			cena+=2.50;
+		}else {
+			cena+=3.50;
+		}
+		
+		if(merce==true) {
+			cena+=0.10;
+		}
+		if(desa==true) {
+			cena+=0.50;
+		}
+		if(tomati==true) {
+			cena+=0.40;
+		}
+		if(olives==true) {
+			cena+=0.60;
+		}
+		if(vista==true) {
+			cena+=0.60;
+		}
+		if(bekons==true) {
+			cena+=0.70;
+		}
+		if(ananas==true) {
+			cena+=0.75;
+		}
+		if(senes==true) {
+			cena+=0.50;
+		}
+		return cena;
+	}
+	
+	public void izvadit(){
+		JOptionPane.showMessageDialog(null, "Lielums: "+izmers+"\nmerce:"+merce+"\nDesa:"+desa+"\nTomati:"
+	+tomati+"\nolives:"+olives+"\nvista:"+vista+"\nbekons:"+bekons+"\nananas:"+ananas+"\nsenes:"+senes);
 	}
 }

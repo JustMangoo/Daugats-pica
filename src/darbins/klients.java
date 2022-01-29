@@ -1,5 +1,7 @@
 package darbins;
 
+import javax.swing.JOptionPane;
+
 public class klients {
 	public String numurs;
 	public String adrese;
@@ -10,4 +12,8 @@ public class klients {
 		this.adrese = adrese;
 		this.vards = vards;
 	}
+	public void izvadit(){
+		JOptionPane.showMessageDialog(null, "Telefona nr: "+numurs+"\nAdrese: "+adrese+"\nVards: "+vards);
+	}
+	
 }
