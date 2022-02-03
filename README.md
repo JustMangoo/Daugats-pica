@@ -10,9 +10,9 @@ PIcerijas programma ar masīviem un klasēm.
 - [x] Pārējo vērtību ievade
 - [x] Cenas aprēķins
 - [x] Rezultatu izvade
-- [ ] Veikt izstrādātās picērijas programmas izgrūšanu uz GitHub krātuvi
-- [ ] Lokāli programmu papildināt ar jaunu funkcionalitāti
-- [ ] Novērst iepriekš konstatētās kļūdas, izdzēst liekos un neizmantotos zarus
-- [ ] Atkārtoti veikt izgrūšanu uz GitHub krātuvi
+- [x] Veikt izstrādātās picērijas programmas izgrūšanu uz GitHub krātuvi
+- [x] Lokāli programmu papildināt ar jaunu funkcionalitāti
+- [x] Novērst iepriekš konstatētās kļūdas, izdzēst liekos un neizmantotos zarus
+- [x] Atkārtoti veikt izgrūšanu uz GitHub krātuvi
 
 :pizza::pizza::pizza::pizza::pizza::pizza::pizza::pizza::pizza::pizza::pizza::pizza:
