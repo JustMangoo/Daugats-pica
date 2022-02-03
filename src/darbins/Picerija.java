@@ -51,9 +51,9 @@ public class Picerija {
     	String dzeriens;
     	String uzkodas;
     	do {
-    		dzeriens = JOptionPane.showInputDialog("Dzerieni\nKola | Fanta | Sprite | Nav");
+    		dzeriens = JOptionPane.showInputDialog("Dzerieni\nKola | Fanta | Kvass | Nav");
     		dzeriens = dzeriens.toLowerCase();
-			}while(!dzeriens.equals("kola") && !dzeriens.equals("fanta") && !dzeriens.equals("sprite") && !dzeriens.equals("nav"));
+			}while(!dzeriens.equals("kola") && !dzeriens.equals("fanta") && !dzeriens.equals("kvass") && !dzeriens.equals("nav"));
     	do {
     		uzkodas = JOptionPane.showInputDialog("Uzkodas\nGrauzdini | Nacho | Fri | Nav");
     		uzkodas = uzkodas.toLowerCase();
